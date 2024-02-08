@@ -11,9 +11,9 @@ export default {
 };
 </script>
 
-<style>
-.container {
-  background: #000;
+<style scoped>
+
+.container scoped {
   color: #fff;
 }
 </style>

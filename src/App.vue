@@ -1,23 +1,47 @@
 <template>
-  <MoleculeHeader />
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <MoleculeHeader
+    :homePage="inHome"
+    @home="goToHomePage()"
+    @done="goToDonePage()"
+  />
+  <MoleculeDoneCard />
+  <MoleculeDoneCard />
+  <MoleculeDoneCard />
+  <MoleculeDoneCard />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import MoleculeHeader from './components/molecules/MoleculeHeader.vue'
+import MoleculeHeader from "./components/molecules/MoleculeHeader.vue";
+import MoleculeDoneCard from "./components/molecules/cards/MoleculeDoneCard.vue";
 
 export default {
-  name: 'App',
+  name: "App",
+  data() {
+    return {
+      inHome: {
+        type: Boolean,
+        default: true,
+      },
+    };
+  },
   components: {
-    HelloWorld,
     MoleculeHeader,
-  }
-}
+    MoleculeDoneCard
+  },
+  methods: {
+    goToHomePage() {
+      this.inHome == true;
+      console.log("router to home page");
+    },
+    goToDonePage() {
+      this.inHome == false;
+      console.log("router to done page");
+    },
+  },
+};
 </script>
 
-<style>
+<style >
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

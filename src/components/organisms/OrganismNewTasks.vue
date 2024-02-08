@@ -1,32 +1,37 @@
 <template>
-  <div class="container">
-    <MoleculeHeader />
-    <MoleculeNewTitleVue />
-    <AtomCreateTaskInputVue />
-    <AtomCreateButtonVue />
-  </div>
+  <MoleculeHeader :homePage="inHome" @home="goToHomePage()" @done="goToDonePage()" />
+  <MoleculeNewTitle />
+  <AtomCreateTaskInput />
+  <AtomCreateButton />
 </template>
 
 <script>
-import AtomCreateButtonVue from '../atoms/AtomCreateButton.vue';
-import AtomCreateTaskInputVue from '../atoms/AtomCreateTaskInput.vue';
-import MoleculeNewTitleVue from '../molecules/MoleculeNewTitle.vue';
-import MoleculeHeader from '../molecules/MoleculeHeader.vue';
+import MoleculeHeader from './components/molecules/MoleculeHeader.vue'
+import MoleculeNewTitle from './components/molecules/MoleculeNewTitle.vue';
+import AtomCreateTaskInput from './components/atoms/AtomCreateTaskInput.vue'
+import AtomCreateButton from './components/atoms/AtomCreateButton.vue';
 
 export default {
   name: "OrganismNewTasks",
   components: {
-    AtomCreateButtonVue,
-    AtomCreateTaskInputVue,
-    MoleculeNewTitleVue,
-    MoleculeHeader
+    MoleculeHeader,
+    MoleculeNewTitle,
+    AtomCreateTaskInput,
+    AtomCreateButton
+  },
+  methods: {
+    goToHomePage() {
+      this.inHome == true;
+      console.log("router to home page");
+    },
+    goToDonePage() {
+      this.inHome == false;
+      console.log("router to done page");
+    },
   },
 };
 </script>
 
-<style>
-.container {
-  background: #000;
-  color: #fff;
-}
+<style scoped>
+
 </style>

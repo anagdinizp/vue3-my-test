@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <AtomPreviousButton />
-    <h2>Create task</h2>
+    <AtomPreviousButton @previous="previous()" />
+    <h2 class="create-task-title">Create task</h2>
   </div>
 </template>
 
@@ -13,12 +13,29 @@ export default {
   components: {
     AtomPreviousButton,
   },
+  methods: {
+    previous() {
+      console.log("router to home - previous");
+    },
+  },
 };
 </script>
 
-<style>
+<style scoped>
 .container {
-  background: #000;
-  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.create-task-title {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #1b1c1f;
+  justify-self: center;
+  justify-content: center;
+  align-self: center;
 }
 </style>
