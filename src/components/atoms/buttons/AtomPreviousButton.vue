@@ -27,7 +27,6 @@ export default {
   color: #1b1c1f;
   font-size: larger;
   border: 0;
-  margin-right: 110px;
   cursor: pointer;
 }
 </style>

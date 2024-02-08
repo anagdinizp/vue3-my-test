@@ -1,18 +1,9 @@
 <template>
-  <MoleculeHeader
-    :homePage="inHome"
-    @home="goToHomePage()"
-    @done="goToDonePage()"
-  />
-  <MoleculeDoneCard />
-  <MoleculeDoneCard />
-  <MoleculeDoneCard />
-  <MoleculeDoneCard />
+  <OrganismNewTasks />
 </template>
 
 <script>
-import MoleculeHeader from "./components/molecules/MoleculeHeader.vue";
-import MoleculeDoneCard from "./components/molecules/cards/MoleculeDoneCard.vue";
+import OrganismNewTasks from "./components/organisms/OrganismNewTasks.vue";
 
 export default {
   name: "App",
@@ -25,16 +16,17 @@ export default {
     };
   },
   components: {
-    MoleculeHeader,
-    MoleculeDoneCard
+    OrganismNewTasks,
   },
   methods: {
     goToHomePage() {
       this.inHome == true;
+      this.inDone == false;
       console.log("router to home page");
     },
     goToDonePage() {
       this.inHome == false;
+      this.inDone == true;
       console.log("router to done page");
     },
   },

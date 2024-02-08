@@ -2,11 +2,12 @@
   <div class="container">
     <AtomPreviousButton @previous="previous()" />
     <h2 class="create-task-title">Create task</h2>
+    <span></span>
   </div>
 </template>
 
 <script>
-import AtomPreviousButton from "../atoms/AtomPreviousButton.vue";
+import AtomPreviousButton from '../atoms/buttons/AtomPreviousButton.vue';
 
 export default {
   name: "MoleculeNewTitle",
@@ -25,7 +26,7 @@ export default {
 .container {
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: space-between;
 }
 .create-task-title {
   font-size: 18px;

@@ -1,10 +1,17 @@
 <template>
-  <button class="button" @click="createTask()">Create</button>
+  <button class="button" @click="createTask()">
+    <AtomCreateIcon />
+  </button>
 </template>
 
 <script>
+import AtomCreateIcon from '../icons/AtomCreateIcon.vue';
+
 export default {
   name: "AtomCreateButton",
+  components: {
+    AtomCreateIcon,
+  },
   methods: {
     createTask() {
       this.$emit("createTask");
@@ -16,17 +23,7 @@ export default {
 
 <style scoped>
 .button {
-  background: #24a19c;
-  color: #ffffff;
-  width: 327px;
-  height: 56px;
-  padding: 20px;
-  border-color: #24a19c;
-  border-radius: 16px;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 22px;
-  letter-spacing: 0px;
-  text-align: center;
+  border: 0;
+  background: none;
 }
 </style>

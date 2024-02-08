@@ -1,18 +1,21 @@
 <template>
   <button class="add-button" @click="goToCreateTaskPage()">
-    <span class="add">+</span>
+    <AtomAddIcon />
   </button>
 </template>
 
 <script>
+import AtomAddIcon from '../icons/AtomAddIcon.vue';
+
 export default {
-  name: "AtomAddButton",
-  methods: {
-    goToCreateTaskPage() {
-      this.$emit("createTask");
-      console.log("button to create task page");
-    }
-  }
+    name: "AtomAddButton",
+    methods: {
+        goToCreateTaskPage() {
+            this.$emit("createTask");
+            console.log("button to create task page");
+        }
+    },
+    components: { AtomAddIcon }
 };
 </script>
 

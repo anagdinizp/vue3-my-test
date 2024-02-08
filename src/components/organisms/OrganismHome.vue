@@ -6,7 +6,7 @@
 
 <script>
 import MoleculeHeader from './components/molecules/MoleculeHeader.vue'
-import AtomTaskToDoCard from './components/atoms/AtomTaskToDoCard.vue';
+import AtomTaskToDoCard from '../atoms/cards/AtomTaskToDoCard.vue';
 import MoleculeHomeTitle from './components/molecules/MoleculeHomeTitle.vue';
 
 export default {

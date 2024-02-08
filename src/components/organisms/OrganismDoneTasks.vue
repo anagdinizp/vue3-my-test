@@ -1,10 +1,13 @@
 <template>
-  <div>
-    <MoleculeHeader
-      :homePage="inHome"
-      @home="goToHomePage()"
-      @done="goToDonePage()"
-    />
+  <MoleculeHeader
+    :homePage="inHome"
+    @home="goToHomePage()"
+    @done="goToDonePage()"
+  />
+  <div class="done-card-container">
+    <MoleculeDoneCard />
+    <MoleculeDoneCard />
+    <MoleculeDoneCard />
     <MoleculeDoneCard />
   </div>
 </template>
@@ -31,4 +34,10 @@ export default {
 </script>
 
 <style scoped>
+.done-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 </style>

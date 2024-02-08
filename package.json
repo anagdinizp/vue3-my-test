@@ -9,7 +9,11 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "dayjs": "^1.11.10",
+    "vue": "^3.2.13",
+    "vue-local-storage": "^0.1.3",
+    "vue-router": "^4.2.5",
+    "vue3-toastify": "^0.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import AtomAddButton from '../atoms/AtomAddButtom.vue';
 import AtomDate from '../atoms/AtomDate.vue';
+import AtomAddButton from '../atoms/buttons/AtomAddButtom.vue';
 
 export default {
   name: "MoleculeHomeTitle",

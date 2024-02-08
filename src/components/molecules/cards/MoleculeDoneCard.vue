@@ -27,14 +27,15 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-inline: 10px;
+  width: 280px;
+  margin-bottom: 15px;
 }
 .container-card-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 347px;
+  width: 280px;
   height: 36px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
@@ -56,8 +57,6 @@ export default {
 .card-content {
   background: #ffffff;
   box-shadow: 0px 4px 40px 0px #0f163a14;
-  width: 327px;
-  min-width: 327px;
   height: fit-content;
   justify-content: flex-start;
   padding: 10px;
