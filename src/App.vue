@@ -1,39 +1,12 @@
 <template>
-  <OrganismNewTasks />
+  <nav class="header">
+    <router-link to="/">Today</router-link>
+    <router-link to="/done">Done</router-link>
+  </nav>
+  <router-view />
 </template>
 
-<script>
-import OrganismNewTasks from "./components/organisms/OrganismNewTasks.vue";
-
-export default {
-  name: "App",
-  data() {
-    return {
-      inHome: {
-        type: Boolean,
-        default: true,
-      },
-    };
-  },
-  components: {
-    OrganismNewTasks,
-  },
-  methods: {
-    goToHomePage() {
-      this.inHome == true;
-      this.inDone == false;
-      console.log("router to home page");
-    },
-    goToDonePage() {
-      this.inHome == false;
-      this.inDone == true;
-      console.log("router to done page");
-    },
-  },
-};
-</script>
-
-<style >
+<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -41,5 +14,38 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.header {
+  background: #f6f7f9;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 42px;
+  justify-content: flex-start;
+  align-items: baseline;
+  display: flex;
+  justify-items: baseline;
+}
+
+nav a {
+  background: transparent;
+  color: #262626;
+  font-size: 14px;
+  height: 42px;
+  border: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  margin-left: 20px;
+  text-decoration: none;
+  justify-items: baseline;
+}
+
+nav a.router-link-exact-active {
+  color: #24a19c;
+  text-decoration: none;
+  border-bottom: 2px solid #24a19c;
 }
 </style>

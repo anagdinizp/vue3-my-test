@@ -15,7 +15,7 @@ export default {
   methods: {
     previous() {
       this.$emit("previous");
-      console.log("button back to home");
+      this.$router.push('/')
     },
   },
 };

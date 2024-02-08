@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     goToCreateTaskPage() {
-      console.log("router to create task page");
+      this.$router.push('/new')
     }
   }
 };

@@ -1,72 +1,64 @@
 <template>
-  <MoleculeHeader
-    :homePage="inHome"
-    @home="goToHomePage()"
-    @done="goToDonePage()"
-  />
   <MoleculeNewTitle />
   <div class="content-container">
     <div class="label-container">
       <label class="create-task-label">task</label>
     </div>
-
     <input v-model="task" type="text" class="create-task-input" />
     <AtomCreateButton />
   </div>
 </template>
 
 <script>
-import MoleculeHeader from "../molecules/MoleculeHeader.vue";
 import MoleculeNewTitle from "../molecules/MoleculeNewTitle.vue";
 import AtomCreateButton from "../atoms/buttons/AtomCreateButton.vue";
-import VueLocalStorage from "vue-local-storage";
+//import VueLocalStorage from "vue-local-storage";
 
 export default {
   name: "OrganismNewTasks",
   components: {
-    MoleculeHeader,
     MoleculeNewTitle,
     AtomCreateButton,
   },
-  mixins: [VueLocalStorage.mixin],
-  data() {
-    return {
-      task: [
-        {
-          id: {
-            type: Number,
-            default: Date.now(),
-          },
-          content: {
-            type: String,
-            default: "",
-          },
-          date: {
-            type: String,
-            default: Date.now(),
-          },
-        },
-      ],
-    };
-  },
-  mounted() {
-    this.task = this.$localStorage.get("task") || [];
-  },
-  watch: {
-    task(newValue) {
-      this.$localStorage.set("task", newValue);
-    },
-  },
-  methods: {
-    goToHomePage() {
-      this.inHome == true;
-      console.log("router to home page");
-    },
-    goToDonePage() {
-      this.inHome == false;
-      console.log("router to done page");
-    },
-  },
+  // mixins: [VueLocalStorage.mixin],
+  // data() {
+  //   return {
+  //     task: [
+  //       {
+  //         id: {
+  //           type: Number,
+  //           default: Date.now(),
+  //         },
+  //         content: {
+  //           type: String,
+  //           default: "",
+  //         },
+  //         date: {
+  //           type: String,
+  //           default: Date.now(),
+  //         },
+  //       },
+  //     ],
+  //   };
+  // },
+  // mounted() {
+  //   this.task = this.$localStorage.get("task") || [];
+  // },
+  // watch: {
+  //   task(newValue) {
+  //     this.$localStorage.set("task", newValue);
+  //   },
+  // },
+  // methods: {
+  //   goToHomePage() {
+  //     this.inHome == true;
+  //     console.log("router to home page");
+  //   },
+  //   goToDonePage() {
+  //     this.inHome == false;
+  //     console.log("router to done page");
+  //   },
+  // },
 };
 </script>
 
@@ -74,7 +66,6 @@ export default {
 .content-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .create-task-input {
@@ -90,6 +81,7 @@ export default {
   display: flex;
   justify-items: flex-start;
   padding-left: 10px;
+  align-items: flex-start;
 }
 .create-task-label {
   font-size: 16px;
